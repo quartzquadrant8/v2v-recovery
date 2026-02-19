@@ -137,3 +137,27 @@ dist
 # Vite logs files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+# --- V2V Logic Layer ---
+node_modules/
+.pnp/
+.pnp.js
+
+# --- Playwright High-Fidelity ---
+test-results/
+playwright-report/
+blob-report/
+playwright/.auth/      # CRITICAL: Ignore stolen device session tokens
+**/playwright-log.txt
+
+# --- Immutable Environment (Docker/Nix) ---
+.devcontainer/.env     # Local overrides only
+.direnv/
+.venv/
+*.swp
+
+# --- Data Exfiltration & Logs ---
+vault/identity-stream.json  # If you want to keep data local only
+.env
+.env.local
+.env.*.local
